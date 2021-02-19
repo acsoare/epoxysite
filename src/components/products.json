@@ -1,0 +1,86 @@
+[
+  {
+    "id": "1",
+    "imagine": "http://hosting2141355.online.pro/assets/images/qq/5.jpeg",
+    "nume": "Black Wood",
+    "descriere": "Masa din lemn masiv de nuc birmanez",
+    "pret": "1899",
+    "discount": "2400",
+    "lungime": "L(lungime) : 97.5cm",
+    "latime": "l(latime) : 49cm",
+    "inaltime": "H(inaltime) : 51cm",
+    "material": "Nuc si epoxina de culoare preferentiala."
+  },
+  {
+    "id": "2",
+    "imagine": "http://hosting2141355.online.pro/assets/images/masa2/4.jpeg",
+    "nume": "Blue Skies",
+    "descriere": "Masa din lemn masiv de tei",
+    "pret": "1399",
+    "discount": "1500",
+    "lungime": "L(lungime) : 97.5cm",
+    "latime": "l(latime) : 49cm",
+    "inaltime": "H(inaltime) : 51cm",
+    "material": "Nuc si epoxina de culoare preferentiala."
+  },
+  {
+    "id": "3",
+    "imagine": "http://hosting2141355.online.pro/assets/images/masa3/1.jpeg",
+    "nume": "Beige Dressed EPO",
+    "descriere": "Masa din lemn de nuc",
+    "pret": "1200",
+    "discount": "1475",
+    "lungime": "L(lungime) : 97.5cm",
+    "latime": "l(latime) : 49cm",
+    "inaltime": "H(inaltime) : 51cm",
+    "material": "Nuc si epoxina de culoare preferentiala."
+  },
+  {
+    "id": "4",
+    "imagine": "http://hosting2141355.online.pro/assets/images/masa4/1.jpeg",
+    "nume": "Future Carbon",
+    "descriere": "Masa din lemn cu tema moderna si sci-fi.",
+    "pret": "2499",
+    "discount": "3359",
+    "lungime": "L(lungime) : 97.5cm",
+    "latime": "l(latime) : 49cm",
+    "inaltime": "H(inaltime) : 51cm",
+    "material": "Nuc si epoxina de culoare preferentiala."
+  },
+  {
+    "id": "5",
+    "imagine": "http://hosting2141355.online.pro/assets/images/masa5/1.jpeg",
+    "nume": "HexaWood Blue",
+    "descriere": "Masa din lemn cu design minimalist format din Hexagoane",
+    "pret": "1899",
+    "discount": "2200",
+    "lungime": "L(lungime) : 97.5cm",
+    "latime": "l(latime) : 49cm",
+    "inaltime": "H(inaltime) : 51cm",
+    "material": "Nuc si epoxina de culoare preferentiala."
+  },
+  {
+    "id": "6",
+    "imagine": "http://hosting2141355.online.pro/assets/images/masa6/4.jpg",
+    "nume": "Premium Oval",
+    "descriere": "Masa din lemn cu o eleganta deosebita",
+    "pret": "4799",
+    "discount": "0",
+    "lungime": "L(lungime) : 97.5cm",
+    "latime": "l(latime) : 49cm",
+    "inaltime": "H(inaltime) : 51cm",
+    "material": "Nuc si epoxina de culoare preferentiala."
+  },
+  {
+    "id": "7",
+    "imagine": "http://hosting2141355.online.pro/assets/images/masa7/6.jpeg",
+    "nume": "Clear Tiles",
+    "descriere": "Masa din lemn cu aranjament modern.",
+    "pret": "1100",
+    "discount": "0",
+    "lungime": "L(lungime) : 97.5cm",
+    "latime": "l(latime) : 49cm",
+    "inaltime": "H(inaltime) : 51cm",
+    "material": "Nuc si epoxina de culoare preferentiala."
+  }
+]
