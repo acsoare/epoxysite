@@ -8,6 +8,7 @@ import ImageView5 from "./components/ImageView5";
 import ImageView6 from "./components/ImageView6";
 import ImageView7 from "./components/ImageView7";
 import products from "../src/components/products.json";
+import Stripe from "./components/StripeContainer";
 import { stringify } from "postcss";
 
 function App(indexOfImage) {
@@ -18,10 +19,12 @@ function App(indexOfImage) {
   const [newlist, setNewList] = useState([]);
   const [cart, setCart] = useState([]);
   const [dimCustomise, setDimCustomise] = useState(false);
+  const [showItem, setShowItem] = useState(false);
 
   const PAGE_PRODUCTS = "main-page";
   const PAGE_CART = "cart";
   const PAGE_DETALII = "detalii";
+  const PAGE_CHECKOUT = "checkout";
 
   const [page, setPage] = useState(PAGE_PRODUCTS);
 
@@ -54,6 +57,23 @@ function App(indexOfImage) {
   function handleChange(e) {
     console.log(e.target.value);
   }
+
+  const renderCheckout = () => (
+    <div>
+      {showItem ? (
+        <Stripe />
+      ) : (
+        <>
+          <h3>1300RON</h3>
+          <img
+            src="http://hosting2141355.online.pro/assets/images/masa3/1.jpeg"
+            alt=""
+          />
+          <button onClick={() => setShowItem(true)}>Finalizeaza</button>
+        </>
+      )}
+    </div>
+  );
 
   const renderPage = () => (
     <>
@@ -426,7 +446,7 @@ function App(indexOfImage) {
                 onClick={handleCustomise}
                 className="ml-2 bg-transparent border-black border-2 w-36 h-16 font-fira mt-10 mb-10 hover:text-white hover:bg-black"
               >
-                Customizeaza dimensiuni
+                Customizeaza
               </button>
             </div>
             {dimCustomise ? (
@@ -455,8 +475,22 @@ function App(indexOfImage) {
                   />
                   <div className="font-fira">cm</div>
                 </div>
+                <div className="font-fira">Material: </div>
+                <div className="flex">
+                  <input
+                    className="text-black font-fira border-2 border-black flex"
+                    type="text"
+                  />
+                </div>
+                <div className="font-fira">Culoare Epoxina: </div>
+                <div className="flex">
+                  <input
+                    className="text-black font-fira border-2 border-black flex"
+                    type="text"
+                  />
+                </div>
                 <button
-                  onClick={handleCustomise}
+                  onClick={() => navigateTo(PAGE_CHECKOUT)}
                   className="flex items-center self-center justify-center ml-2 bg-transparent border-black border-2 w-10 h-8 font-fira mt-10 mb-10 hover:text-white hover:bg-black"
                 >
                   OK
@@ -475,6 +509,7 @@ function App(indexOfImage) {
       {page === PAGE_PRODUCTS && renderPage()}
       {page === PAGE_CART && renderCart()}
       {page === PAGE_DETALII && renderDetalii()}
+      {page === PAGE_CHECKOUT && renderCheckout()}
     </div>
   );
 }
