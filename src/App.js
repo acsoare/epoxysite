@@ -78,7 +78,7 @@ function App(indexOfImage) {
     <>
       {!overlay ? (
         <div className="flex flex-col">
-          <div className="w-full h-16 bg-black flex items-center justify-between justify-center mt-2 top-0 fixed z-10">
+          <div className="w-full h-16 bg-black flex items-center justify-between justify-center  top-0 fixed z-10">
             {/* Header */}
 
             {click ? (
@@ -93,46 +93,30 @@ function App(indexOfImage) {
               ></i>
             )}
 
-            <div className="hidden font-semibold text-5xl text-white  font-custom md:block  ">
+            <div className="hidden font-thin text-5xl text-white  font-custom md:block  ">
               <a href="/">EPOXY</a>
             </div>
 
             {click ? (
-              <div className="bg-gray-300 w-1/2 md:w-1/3  h-auto overflow-visible z-40 top-0 bottom-0 flex flex-grow rounded-3xl shadow-xl rounded-bl-none rounded-tl-none absolute items-top justify-center absolute ">
-                <ul className=" mt-10">
-                  <li>
-                    <a
-                      href="/"
-                      className="text-white mt-10 text-2xl font-semibold flex justify-center"
-                    >
-                      Home
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/about"
-                      className="text-white mt-10 text-2xl font-semibold flex justify-center"
-                    >
-                      About
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/contact"
-                      className="text-white mt-10 text-2xl font-semibold flex justify-center"
-                    >
-                      Contact
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/products"
-                      className="text-white mt-10 text-2xl font-semibold flex justify-center"
-                    >
-                      Products
-                    </a>
-                  </li>
-                </ul>
+              <div className="bg-black absolute top-0 z-40 overflow-hidden w-3/4 md:w-1/3 lg:w-1/3 xl:w-1/3 h-screen rounded-3xl rounded-bl-none rounded-tl-none rounded-tr-none">
+                <div className="grid grid-cols-1 text-white   mt-20 leading-loose text-3xl font-fira divide-y divide-white divide-opacity-50 ">
+                  <div className="flex items-center self-center justify-items-center justify-center  ">
+                    Acasa
+                  </div>
+
+                  <div className="flex items-center self-center justify-items-center justify-center">
+                    Contact
+                  </div>
+                  <div className="flex items-center self-center justify-items-center justify-center">
+                    FAQ
+                  </div>
+                  <div className="flex items-center self-center justify-items-center justify-center">
+                    Produse
+                  </div>
+                  <div className="flex items-center self-center justify-items-center justify-center">
+                    Configurator
+                  </div>
+                </div>
               </div>
             ) : null}
             <div className="flex justify-between text-black ">
@@ -157,7 +141,8 @@ function App(indexOfImage) {
               </button>
             </div>
           </div>
-          <div className=" bg-black w-full h-20 flex justify-center items-center text-white z-50 font-custom text-5xl md:hidden lg:hidden xl:hidden">
+
+          <div className=" bg-white mt-16 w-full h-20 flex justify-center items-center text-black font-custom text-5xl md:hidden lg:hidden xl:hidden ">
             <a href="/">EPOXY</a>
           </div>
 
@@ -215,7 +200,6 @@ function App(indexOfImage) {
                       onClick={() => addToCart(product)}
                       className="bg-white h-10 w-28 font-fira text-lg font-thin border-black border-2 hover:bg-black hover:text-white "
                     >
-                      {/* <a href="/quickbuy">Adauga in cos</a> */}
                       Adauga in cos
                     </button>
                   </div>
@@ -276,27 +260,6 @@ function App(indexOfImage) {
           ) : (
             console.log(products[global.indexOfImage].id)
           )}
-          {/* <div className="font-fira text-xl flex items-center justify-center align-middle mt-96">
-            Detalii
-          </div>
-          <div className="font-fira mt-10 pl-2 mr-10 flex items-center">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus
-            rhoncus facilisis. Donec a porta arcu. Pellentesque habitant morbi
-            tristique senectus et netus et malesuada fames ac turpis egestas.
-            Curabitur a luctus arcu. Aenean vitae viverra dui, ut mattis nibh.
-            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.
-          </div>
-          <div className="flex flex-col  w-screen md:justify-start">
-            <ul className="font-fira ml-10 mt-6 leading-snug list-disc mb-10 mr-6 pr-6">
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-              <li>Sed at ante eget sapien condimentum eleifend vel in sem.</li>
-              <li>
-                Nam malesuada nisi non lectus placerat egestas nec sit amet
-                augue.
-              </li>
-              <li>Etiam vel arcu a quam feugiat efficitur.</li>
-              <li>Nunc at dui non metus sodales rutrum.</li>
-            </ul> */}
         </div>
         // </div>
       )}
@@ -306,58 +269,70 @@ function App(indexOfImage) {
   const renderCart = () => (
     <>
       <div className="flex flex-col">
-        <div className="w-full h-16 bg-white mx-auto flex items-center justify-between mt-2 top-0 fixed z-10">
+        <div className="w-full  h-16 bg-black mx-auto flex items-center justify-between top-0 fixed z-10">
           {/* Header */}
 
           {click ? (
             <i
-              className="fas fa-times fa-lg ml-10 transform hover:scale-125 duration-200 flex align-middle"
+              className="fas fa-times fa-lg ml-10 text-white z-50 transform hover:scale-125 duration-200 flex align-middle"
               onClick={handleClick}
             ></i>
           ) : (
             <i
-              className="fas fa-bars fa-lg ml-10 transform hover:scale-125 duration-200"
+              className="fas fa-bars fa-lg ml-10 text-white z-50 transform hover:scale-125 duration-200"
               onClick={handleClick}
             ></i>
           )}
 
-          <div className="hidden font-semibold text-5xl text-black font-custom md:block  ">
+          <div className="hidden font-semibold text-5xl text-white font-custom md:block z-50  ">
             <a href="/">EPOXY</a>
           </div>
+
+          {click ? (
+            <div className="bg-black absolute top-0 z-40 overflow-hidden w-3/4 md:w-1/3 lg:w-1/3 xl:w-1/3 h-screen rounded-3xl rounded-bl-none rounded-tl-none rounded-tr-none  ">
+              <div className="grid grid-cols-1 text-white   mt-20 leading-loose text-3xl font-fira divide-y divide-white divide-opacity-50 ">
+                <div className="flex items-center self-center justify-items-center justify-center">
+                  Acasa
+                </div>
+                <div className="flex items-center self-center justify-items-center justify-center">
+                  Contact
+                </div>
+                <div className="flex items-center self-center justify-items-center justify-center">
+                  FAQ
+                </div>
+                <div className="flex items-center self-center justify-items-center justify-center">
+                  Produse
+                </div>
+                <div className="flex items-center self-center justify-items-center justify-center">
+                  Configurator
+                </div>
+              </div>
+            </div>
+          ) : null}
 
           <div className="flex justify-between text-black ">
             <button onClick={() => navigateTo(PAGE_CART)}>
               <div className="flex font-fira">
-                <i class="fas fa-shopping-cart fa-2x flex align-middle"></i>{" "}
-                <div className="flex place-self-start justify-center align-top b-2 rounded-xl bg-red-400 w-6 h-6">
+                <i class="fas fa-shopping-cart fa-2x flex align-middle text-white"></i>
+                <div className="flex place-self-start justify-center  mr-6 md:mr-10 lg:mr-10 xl:mr-10 align-top b-2 rounded-xl bg-red-400 w-6 h-6">
                   {cart.length}
                 </div>
               </div>
             </button>
-            <button>
-              <a href="/facebook">
-                <i className="fab fa-facebook-square fa-2x mr-2 transform hover:scale-125 duration-200 ml-2"></i>
-              </a>
-            </button>
-
-            <button>
-              <a href="/instagram">
-                <i className="fab fa-instagram fa-2x mr-2 transform hover:scale-125 duration-200"></i>
-              </a>
-            </button>
           </div>
         </div>
-        <div className=" bg-white w-full h-20 flex justify-center items-center text-white font-custom text-5xl md:hidden lg:hidden xl:hidden">
+        <div className=" bg-white w-full h-20 flex justify-center items-center text-black font-custom text-5xl md:hidden lg:hidden xl:hidden">
           EPOXY
         </div>
       </div>
+
       {cart.map((product, indexOfImage) => (
-        <div className="group flex flex-col card ml-0 h-auto mr-0 mb-20 md:mr-14 lg:mr-14 xl:mr-14 bg-white p-2 pb-10 rounded-xl shadow-2xl float-none  ">
+        <div className="self-center group flex flex-col card ml-0 w-screen h-auto mr-0 mb-20 md:mr-14 lg:mr-14 xl:mr-14 bg-white p-2 pb-10 rounded-xl shadow-2xl float-none ">
           <img
             value={product.id}
             onChange={handleChange}
             id={product.id}
-            className="max-w-lg max-h-lg h-96 object-cover flex self-center "
+            className="w-screen md:h-600 lg:h-600 xl:h-600 md:w-600 lg:h-600 xl:h-600 max-h-lg h-96 object-cover flex self-center "
             onClick={getIndexOfClick}
             src={product.imagine}
             alt=""
@@ -411,44 +386,55 @@ function App(indexOfImage) {
   const renderDetalii = () => (
     <>
       <div className="flex flex-col">
-        <div className="w-full h-16 bg-white mx-auto flex items-center justify-between mt-2 top-0 fixed z-10">
+        <div className="w-full h-16 bg-black mx-auto flex items-center justify-between  top-0 fixed z-10">
           {/* Header */}
 
           {click ? (
             <i
-              className="fas fa-times fa-lg ml-10 transform hover:scale-125 duration-200 flex align-middle"
+              className="fas fa-times fa-lg ml-10 transform text-white hover:scale-125 duration-200 flex align-middle z-50"
               onClick={handleClick}
             ></i>
           ) : (
             <i
-              className="fas fa-bars fa-lg ml-10 transform hover:scale-125 duration-200"
+              className="fas fa-bars fa-lg ml-10 transform text-white hover:scale-125 duration-200 z-50"
               onClick={handleClick}
             ></i>
           )}
 
-          <div className="hidden font-semibold text-5xl text-black font-custom md:block  ">
+          <div className="hidden font-semibold text-5xl text-white font-custom md:block">
             <a href="/">EPOXY</a>
           </div>
+
+          {click ? (
+            <div className="bg-black absolute top-0 z-40 overflow-hidden w-3/4 md:w-1/3 lg:w-1/3 xl:w-1/3 h-screen rounded-3xl rounded-bl-none rounded-tl-none rounded-tr-none  ">
+              <div className="grid grid-cols-1 text-white   mt-20 leading-loose text-3xl font-fira divide-y divide-white divide-opacity-50 ">
+                <div className="flex items-center self-center justify-items-center justify-center">
+                  Acasa
+                </div>
+                <div className="flex items-center self-center justify-items-center justify-center">
+                  Contact
+                </div>
+                <div className="flex items-center self-center justify-items-center justify-center">
+                  FAQ
+                </div>
+                <div className="flex items-center self-center justify-items-center justify-center">
+                  Produse
+                </div>
+                <div className="flex items-center self-center justify-items-center justify-center">
+                  Configurator
+                </div>
+              </div>
+            </div>
+          ) : null}
 
           <div className="flex justify-between text-black ">
             <button onClick={() => navigateTo(PAGE_CART)}>
               <div className="flex font-fira">
-                <i class="fas fa-shopping-cart fa-2x flex align-middle"></i>{" "}
-                <div className="flex place-self-start justify-center align-top b-2 rounded-xl bg-red-400 w-6 h-6">
+                <i class="fas fa-shopping-cart fa-2x flex align-middle text-white"></i>{" "}
+                <div className="flex place-self-start justify-center mr-6 align-top b-2 rounded-xl bg-red-400 w-6 h-6">
                   {cart.length}
                 </div>
               </div>
-            </button>
-            <button>
-              <a href="/facebook">
-                <i className="fab fa-facebook-square fa-2x mr-2 transform hover:scale-125 duration-200 ml-2"></i>
-              </a>
-            </button>
-
-            <button>
-              <a href="/instagram">
-                <i className="fab fa-instagram fa-2x mr-2 transform hover:scale-125 duration-200"></i>
-              </a>
             </button>
           </div>
         </div>
@@ -464,7 +450,7 @@ function App(indexOfImage) {
                 value={product.id}
                 onChange={handleChange}
                 id={product.id}
-                className="max-w-lg max-h-lg h-96 object-cover flex justify-center items-center self-center md:justify-start items-start lg:justify-start lg:items-start xl:justify-start xl:items-start"
+                className="w-screen md:h-600 lg:h-600 xl:h-600 md:w-600 lg:h-600 xl:h-600 max-h-lg h-96 object-cover flex self-center "
                 onClick={getIndexOfClick}
                 src={product.imagine}
                 alt=""
