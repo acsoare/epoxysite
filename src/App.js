@@ -9,7 +9,6 @@ import ImageView6 from "./components/ImageView6";
 import ImageView7 from "./components/ImageView7";
 import products from "../src/components/products.json";
 import Stripe from "./components/StripeContainer";
-import { stringify } from "postcss";
 
 function App(indexOfImage) {
   const state = { selectedCardType: "" };
@@ -79,43 +78,86 @@ function App(indexOfImage) {
     <>
       {!overlay ? (
         <div className="flex flex-col">
-          <div className="w-full h-16 bg-transparent mx-auto flex items-center justify-between justify-center mt-2">
+          <div className="w-full h-16 bg-black flex items-center justify-between justify-center mt-2 top-0 fixed z-10">
             {/* Header */}
 
             {click ? (
               <i
-                className="fas fa-times fa-lg ml-10 transform hover:scale-125 duration-200 flex align-middle"
+                className="fas fa-times fa-lg ml-10 text-white transform hover:scale-125 duration-200 flex align-middle z-50"
                 onClick={handleClick}
               ></i>
             ) : (
               <i
-                className="fas fa-bars fa-lg ml-10 transform hover:scale-125 duration-200"
+                className="fas fa-bars fa-lg ml-10 text-white transform hover:scale-125 duration-200 flex align-middle z-50"
                 onClick={handleClick}
               ></i>
             )}
 
-            <div className="hidden font-semibold text-5xl text-black font-custom md:block  ">
+            <div className="hidden font-semibold text-5xl text-white  font-custom md:block  ">
               <a href="/">EPOXY</a>
             </div>
 
+            {click ? (
+              <div className="bg-gray-300 w-1/2 md:w-1/3  h-auto overflow-visible z-40 top-0 bottom-0 flex flex-grow rounded-3xl shadow-xl rounded-bl-none rounded-tl-none absolute items-top justify-center absolute ">
+                <ul className=" mt-10">
+                  <li>
+                    <a
+                      href="/"
+                      className="text-white mt-10 text-2xl font-semibold flex justify-center"
+                    >
+                      Home
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/about"
+                      className="text-white mt-10 text-2xl font-semibold flex justify-center"
+                    >
+                      About
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/contact"
+                      className="text-white mt-10 text-2xl font-semibold flex justify-center"
+                    >
+                      Contact
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/products"
+                      className="text-white mt-10 text-2xl font-semibold flex justify-center"
+                    >
+                      Products
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            ) : null}
             <div className="flex justify-between text-black ">
               <button onClick={() => navigateTo(PAGE_CART)}>
-                <i class="fas fa-shopping-cart fa-2x"></i> ({cart.length})
+                <div className="flex font-fira">
+                  <i class="fas fa-shopping-cart fa-2x flex text-white align-middle"></i>{" "}
+                  <div className="flex place-self-start justify-center align-top b-2 rounded-xl text-white bg-red-400 w-6 h-6">
+                    {cart.length}
+                  </div>
+                </div>
               </button>
               <button>
                 <a href="/facebook">
-                  <i className="fab fa-facebook-square fa-2x mr-2 transform hover:scale-125 duration-200 ml-2"></i>
+                  <i className="fab fa-facebook-square fa-2x mr-2 transform hover:scale-125 duration-200 ml-2 text-white"></i>
                 </a>
               </button>
 
               <button>
                 <a href="/instagram">
-                  <i className="fab fa-instagram fa-2x mr-2 transform hover:scale-125 duration-200"></i>
+                  <i className="fab fa-instagram fa-2x mr-2 transform hover:scale-125 duration-200 text-white"></i>
                 </a>
               </button>
             </div>
           </div>
-          <div className=" bg-white w-full h-20 flex justify-center items-center text-black font-custom text-5xl md:hidden lg:hidden xl:hidden">
+          <div className=" bg-black w-full h-20 flex justify-center items-center text-white z-50 font-custom text-5xl md:hidden lg:hidden xl:hidden">
             <a href="/">EPOXY</a>
           </div>
 
@@ -264,7 +306,7 @@ function App(indexOfImage) {
   const renderCart = () => (
     <>
       <div className="flex flex-col">
-        <div className="w-full h-16 bg-transparent mx-auto flex items-center justify-between mt-2">
+        <div className="w-full h-16 bg-white mx-auto flex items-center justify-between mt-2 top-0 fixed z-10">
           {/* Header */}
 
           {click ? (
@@ -285,7 +327,12 @@ function App(indexOfImage) {
 
           <div className="flex justify-between text-black ">
             <button onClick={() => navigateTo(PAGE_CART)}>
-              <i class="fas fa-shopping-cart fa-2x"></i> ({cart.length})
+              <div className="flex font-fira">
+                <i class="fas fa-shopping-cart fa-2x flex align-middle"></i>{" "}
+                <div className="flex place-self-start justify-center align-top b-2 rounded-xl bg-red-400 w-6 h-6">
+                  {cart.length}
+                </div>
+              </div>
             </button>
             <button>
               <a href="/facebook">
@@ -300,7 +347,7 @@ function App(indexOfImage) {
             </button>
           </div>
         </div>
-        <div className=" bg-white w-full h-20 flex justify-center items-center text-black font-custom text-5xl md:hidden lg:hidden xl:hidden">
+        <div className=" bg-white w-full h-20 flex justify-center items-center text-white font-custom text-5xl md:hidden lg:hidden xl:hidden">
           EPOXY
         </div>
       </div>
@@ -364,7 +411,7 @@ function App(indexOfImage) {
   const renderDetalii = () => (
     <>
       <div className="flex flex-col">
-        <div className="w-full h-16 bg-transparent mx-auto flex items-center justify-between mt-2">
+        <div className="w-full h-16 bg-white mx-auto flex items-center justify-between mt-2 top-0 fixed z-10">
           {/* Header */}
 
           {click ? (
@@ -385,7 +432,12 @@ function App(indexOfImage) {
 
           <div className="flex justify-between text-black ">
             <button onClick={() => navigateTo(PAGE_CART)}>
-              <i class="fas fa-shopping-cart fa-2x"></i> ({cart.length})
+              <div className="flex font-fira">
+                <i class="fas fa-shopping-cart fa-2x flex align-middle"></i>{" "}
+                <div className="flex place-self-start justify-center align-top b-2 rounded-xl bg-red-400 w-6 h-6">
+                  {cart.length}
+                </div>
+              </div>
             </button>
             <button>
               <a href="/facebook">
@@ -400,7 +452,7 @@ function App(indexOfImage) {
             </button>
           </div>
         </div>
-        <div className=" bg-white w-full h-20 flex justify-center items-center text-black font-custom text-5xl md:hidden lg:hidden xl:hidden">
+        <div className=" bg-white w-full h-20 flex justify-center items-center text-white font-custom text-5xl md:hidden lg:hidden xl:hidden">
           EPOXY
         </div>
       </div>
