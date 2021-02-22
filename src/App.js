@@ -12,7 +12,7 @@ import Stripe from "./components/StripeContainer";
 
 function App(indexOfImage) {
   const state = { selectedCardType: "" };
-
+  const srcPozaCheckout = "";
   const [click, setClick] = useState(false);
   const [overlay, setOverlay] = useState(false);
   const [newlist, setNewList] = useState([]);
@@ -57,18 +57,69 @@ function App(indexOfImage) {
     console.log(e.target.value);
   }
 
-  const renderCheckout = () => (
+  const renderCheckout = (props) => (
     <div>
       {showItem ? (
-        <Stripe />
+        <>
+          {cart.map((product) => (
+            <>
+              {product.pret === "1200" ? (
+                <Stripe pret="1699" />
+              ) : (
+                <Stripe pret="1699" />
+              )}
+            </>
+          ))}
+        </>
       ) : (
         <>
-          <h3>1300RON</h3>
-          <img
-            src="http://hosting2141355.online.pro/assets/images/masa3/1.jpeg"
-            alt=""
-          />
-          <button onClick={() => setShowItem(true)}>Finalizeaza</button>
+          {cart.map((product) => (
+            <>
+              <div className="flex flex-row">
+                <div className="w-1/2 bg-gray-200 h-screen flex items-center justify-center">
+                  <div className="h-600 w-600 bg-gray-200 rounded-xl">
+                    <div className="flex flex-col items-center">
+                      <h1 className=" font-fira self-center text-xl">
+                        {product.nume}
+                      </h1>
+                      <img
+                        className=" w-500 h-500 rounded-xl flex self-start items-center self-center shadow-2xl "
+                        src={product.imagine}
+                        alt=""
+                      />
+                      <h1
+                        pret={product.pret}
+                        className="flex items-end self-end text-3xl font-fira mr-12 mt-10"
+                      >
+                        {product.pret} RON
+                      </h1>
+                      {/* <button onClick={() => setShowItem(true)}>
+                        Finalizeaza
+                      </button> */}
+                    </div>
+                  </div>
+                </div>
+                <div className=" w-1/2 h-screen bg-gray-50 flex items-center justify-center">
+                  <div className="h-600 w-600 bg-gray-50 rounded-xl shadow-2xl flex flex-col">
+                    <h1 className="font-fira flex text-2xl mt-2 ml-2">
+                      Informatii plata
+                    </h1>
+                    <p className="font-fira text-xl text-gray-700 ml-2 mt-8">
+                      Email:
+                    </p>
+                    <input
+                      className="border-gray-600 border-2 rounded-md mt-2 ml-2 mr-2"
+                      type="text"
+                    />
+                    <p className="font-fira text-xl text-gray-700 mt-4 mb-4">
+                      Informatii card:
+                    </p>
+                    <Stripe />
+                  </div>
+                </div>
+              </div>
+            </>
+          ))}
         </>
       )}
     </div>

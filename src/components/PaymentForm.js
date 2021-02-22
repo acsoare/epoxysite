@@ -29,6 +29,8 @@ export default function PaymentForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    global.pret = "1699";
+    console.log(global.pret);
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: "card",
       card: elements.getElement(CardElement),
@@ -38,7 +40,7 @@ export default function PaymentForm() {
       try {
         const { id } = paymentMethod;
         const response = await axios.post("http://localhost:4000/payment", {
-          amount: 120000,
+          amount: global.pret * 100,
           id,
         });
 
@@ -63,7 +65,9 @@ export default function PaymentForm() {
               <CardElement options={CARD_OPTIONS} />
             </div>
           </fieldset>
-          <button>Pay</button>
+          <button className="bg-red-400 rounded-md h-10 w-20 font-fira text-md leading-loose mt-4 ml-4 text-lg">
+            Plateste
+          </button>
         </form>
       ) : (
         <div>
